@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Insha Pizza - Slot Machine</title>
+<title>Insha Fast Food - Slot Machine</title>
 <style>
 body{margin:0;font-family:Arial;background:#0a0a0a;color:#fff;text-align:center;overflow-x:hidden}
 .top{background:#FFD700;padding:8px;position:sticky;top:0;z-index:100}
@@ -24,7 +24,6 @@ footer a{color:#777;text-decoration:none}
 #adminPanel{display:none;position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.97);z-index:999;padding:16px;overflow:auto;text-align:left}
 #adminPanel:target{display:block}
 input,select{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:1px solid #444;background:#000;color:#fff;box-sizing:border-box}
-/* SLOT MACHINE */
 .machine{background:linear-gradient(#2a2a2a,#000);border:4px solid #FFD700;border-radius:20px;padding:15px;margin:10px auto;max-width:380px;box-shadow:0 0 25px #FFD70088}
 .reels{display:flex;gap:8px;justify-content:center;margin:12px 0}
 .reel{background:#fff;color:#000;width:95px;height:110px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:48px;overflow:hidden;border:3px solid #FFD700}
@@ -37,8 +36,8 @@ input,select{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:1px s
 @keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0.8}}
 </style></head>
 <body>
-<div class="top"><a href="tel:03427529146">Call Now</a><a href="https://wa.me/923427529146">WhatsApp</a><a href="https://maps.google.com/?q=Insha+Pizza+Shop+Ichhra+Lahore">Location</a><a href="https://www.google.com/maps/search/Insha+Pizza+Shop+Lahore">5 Star Review</a></div>
-<h1>INSHA PIZZA - LAHORE</h1>
+<div class="top"><a href="tel:03427529146">Call Now</a><a href="https://wa.me/923427529146">WhatsApp</a><a href="https://maps.google.com/?q=Insha+Fast+Food+Ichhra+Lahore">Location</a><a href="https://www.google.com/maps/search/Insha+Fast+Food+Lahore">5 Star Review</a></div>
+<h1>INSHA FAST FOOD - LAHORE</h1>
 <p style="font-size:11px;color:#aaa">Owner Shoaib | 11 AM - 2 AM | Free Delivery Ichhra, Mazang</p>
 <h3>Our Deals - Deal 1 to 11</h3>
 <div class="card"><img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=400"><div><b>Deal 1: Combo-1</b><br><span>1 Zinger + Fries + Drink</span><br><span class="price">Rs.600</span><br><button class="obtn" onclick="window.open('https://wa.me/923427529146?text=Salam Bhai Mujhe Deal 1 Order Karna Hai','_blank')">Order</button></div></div>
@@ -52,8 +51,6 @@ input,select{width:100%;padding:10px;margin:5px 0;border-radius:8px;border:1px s
 <div class="card"><img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400"><div><b>Deal 9: Family-1</b><br><span>1 Reg Pizza + 2 Zinger + 2 Pcs + 1.5Ltr</span><br><span class="price">Rs.1700</span><br><button class="obtn" onclick="window.open('https://wa.me/923427529146?text=Salam Bhai Mujhe Deal 9 Order Karna Hai','_blank')">Order</button></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400"><div><b>Deal 10: Family-2</b><br><span>1 Large Rahat Special + 2 Zinger + 1.5Ltr</span><br><span class="price">Rs.2600</span><br><button class="obtn" onclick="window.open('https://wa.me/923427529146?text=Salam Bhai Mujhe Deal 10 Order Karna Hai','_blank')">Order</button></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400"><div><b>Deal 11: Family-3</b><br><span>5 Zinger + 20 Wings + 1.5Ltr</span><br><span class="price">Rs.3200</span><br><button class="obtn" onclick="window.open('https://wa.me/923427529146?text=Salam Bhai Mujhe Deal 11 Order Karna Hai','_blank')">Order</button></div></div>
-
-<!-- SLOT MACHINE - 24H LOCK + BILL + FLOWERS -->
 <div class="box">
 <h3>🎰 Slide Machine - Jackpot Jeetain!</h3>
 <p style="font-size:12px;color:#aaa">24 ghante me sirf 1 baar! 3 same aaye to JACKPOT!</p>
@@ -97,43 +94,14 @@ function flowerRain(){var flowers=['🌸','🌹','🌺','💐','🌷','🎉','�
 function updateBill(){var v=document.getElementById('dealSelect').value;var box=document.getElementById('billBox');if(!v||!window._slotWin){box.style.display='none';return;}var parts=v.split('|');var dname=parts[0];var orig=parseInt(parts[1]);var winStr=window._slotWin||'';var pct=0;var isFreePizza=false;var isFreeFries=false;if(winStr.indexOf('Free Pizza')!==-1){isFreePizza=true;}else if(winStr.indexOf('Free Fries')!==-1){isFreeFries=true;}else{var m=winStr.match(/(\d+)/);if(m)pct=parseInt(m[1]);}var disc=Math.round(orig*pct/100);var after=orig-disc;var loc=document.getElementById('sLocation').value.toLowerCase();var del=0;if(loc.indexOf('ichhra')===-1&&loc.indexOf('ichra')===-1&&loc.indexOf('mazang')===-1&&loc!==''){del=150;}var total=after+del;window._total=total;window._deal=dname;var html='Deal: '+dname+'<br>Original: Rs.'+orig+'<br>';if(isFreePizza){html+='Inaam: <b>Free Pizza (Small)</b> - Deal ke saath Free milega<br>';}else if(isFreeFries){html+='Inaam: <b>Free Fries</b> - Deal ke saath Free milega<br>';}else{html+='Discount ('+winStr+'): - Rs.'+disc+'<br>After Discount: Rs.'+after+'<br>';}html+='Delivery: '+(del===0?'<b>FREE (Ichhra / Mazang)</b>':'Rs.'+del)+'<br><hr><b>Total to Pay: Rs.'+total+'</b> (Cash on Delivery)';box.style.display='block';box.innerHTML=html;}
 function claimSlot(){var n=document.getElementById('sName').value;var p=document.getElementById('sPhone').value;var d=document.getElementById('dealSelect').value;var l=document.getElementById('sLocation').value;if(!n||!p||!d||!l){alert('Name, Phone, Deal, Location bharein');return;}try{var codes=JSON.parse(localStorage.getItem('insha_codes')||'[]');for(var i=codes.length-1;i>=0;i--){if(String(codes[i].code)===String(window._slotCode)){codes[i].name=n;codes[i].phone=p;codes[i].deal=window._deal||d;codes[i].total=window._total;codes[i].location=l;break;}}localStorage.setItem('insha_codes',JSON.stringify(codes));var all=JSON.parse(localStorage.getItem('insha_shop_data')||'[]');all.push({name:n,phone:p,win:window._slotWin,code:window._slotCode,deal:window._deal||d,total:window._total,location:l,date:new Date().toLocaleString(),used:false});localStorage.setItem('insha_shop_data',JSON.stringify(all));}catch(e){}window.open('https://wa.me/923427529146?text=Salam Shoaib Bhai%0AMain ne Slot Machine jeeta hai%0AName: '+encodeURIComponent(n)+'%0APhone: '+encodeURIComponent(p)+'%0AWin: '+encodeURIComponent(window._slotWin||'')+'%0ACode: '+window._slotCode+'%0ADeal: '+encodeURIComponent(window._deal||d)+'%0ATotal: Rs.'+(window._total||'')+'%0ALocation: '+encodeURIComponent(l),'_blank');}
 var slotLocked=false;
-(function(){
-try{var last=parseInt(localStorage.getItem('insha_last_slot')||'0');if(last && Date.now()-last < 24*60*60*1000){slotLocked=true;var left=24*60*60*1000-(Date.now()-last);var h=Math.floor(left/3600000);var m=Math.floor((left%3600000)/60000);var t=document.getElementById('slotTimer');t.style.display='block';t.innerText='Aap ne aaj spin kar liya hai. Agla spin '+h+'h '+m+'m baad milega.';document.getElementById('spinBtn').disabled=true;document.getElementById('spinBtn').innerText='LOCKED - KAL AAYEN';document.getElementById('slotResult').innerText='Kal dobara aayen!';}}catch(e){}
-})();
-function spinSlot(){
-if(slotLocked){alert('Aaj ka spin ho chuka hai, kal aayen!');return;}
-var btn=document.getElementById('spinBtn');btn.disabled=true;btn.innerText='GHOOM RAHA HAI...';
-var icons=['🍕','🍔','🍟','🌭','🥤','🍗'];
-var c1=0,c2=0,c3=0;
-var i1=setInterval(function(){document.getElementById('r1').innerText=icons[Math.floor(Math.random()*icons.length)];c1++;if(c1>12){clearInterval(i1);}},80);
-var i2=setInterval(function(){document.getElementById('r2').innerText=icons[Math.floor(Math.random()*icons.length)];c2++;if(c2>18){clearInterval(i2);}},80);
-var i3=setInterval(function(){document.getElementById('r3').innerText=icons[Math.floor(Math.random()*icons.length)];c3++;if(c3>24){clearInterval(i3);finishSlot();}},80);
-}
-function finishSlot(){
-var a=document.getElementById('r1').innerText;var b=document.getElementById('r2').innerText;var c=document.getElementById('r3').innerText;
-var win='';
-if(a==='🍕'&&b==='🍕'&&c==='🍕'){win='JACKPOT - Free Pizza';}
-else if(a==='🍔'&&b==='🍔'&&c==='🍔'){win='15% OFF';}
-else if(a==='🍟'&&b==='🍟'&&c==='🍟'){win='Free Fries';}
-else if(a===b||b===c||a===c){win='5% OFF';}
-else{win='3% OFF';}
-var code=Math.floor(1000+Math.random()*9000);
-window._slotWin=win;window._slotCode=code;
-try{var codes=JSON.parse(localStorage.getItem('insha_codes')||'[]');codes.push({code:code,win:win,date:new Date().toLocaleString(),used:false,name:'',phone:'',deal:'Slot Machine',total:'',location:''});localStorage.setItem('insha_codes',JSON.stringify(codes));localStorage.setItem('insha_last_slot',Date.now().toString());}catch(e){}
-document.getElementById('slotResult').innerText='Mubarak ho! Aap ko '+win+' mila!';
-document.getElementById('slotCodeBox').style.display='block';
-document.getElementById('slotCodeText').innerText=code;
-document.getElementById('slotClaim').style.display='block';
-document.getElementById('spinBtn').innerText='HO GAYA - KAL PHIR AAYEN';
-flowerRain();
-updateBill();
-}
+(function(){try{var last=parseInt(localStorage.getItem('insha_last_slot')||'0');if(last && Date.now()-last < 24*60*60*1000){slotLocked=true;var left=24*60*60*1000-(Date.now()-last);var h=Math.floor(left/3600000);var m=Math.floor((left%3600000)/60000);var t=document.getElementById('slotTimer');t.style.display='block';t.innerText='Aap ne aaj spin kar liya hai. Agla spin '+h+'h '+m+'m baad milega.';document.getElementById('spinBtn').disabled=true;document.getElementById('spinBtn').innerText='LOCKED - KAL AAYEN';document.getElementById('slotResult').innerText='Kal dobara aayen!';}}catch(e){}})();
+function spinSlot(){if(slotLocked){alert('Aaj ka spin ho chuka hai, kal aayen!');return;}var btn=document.getElementById('spinBtn');btn.disabled=true;btn.innerText='GHOOM RAHA HAI...';var icons=['🍕','🍔','🍟','🌭','🥤','🍗'];var c1=0,c2=0,c3=0;var i1=setInterval(function(){document.getElementById('r1').innerText=icons[Math.floor(Math.random()*icons.length)];c1++;if(c1>12){clearInterval(i1);}},80);var i2=setInterval(function(){document.getElementById('r2').innerText=icons[Math.floor(Math.random()*icons.length)];c2++;if(c2>18){clearInterval(i2);}},80);var i3=setInterval(function(){document.getElementById('r3').innerText=icons[Math.floor(Math.random()*icons.length)];c3++;if(c3>24){clearInterval(i3);finishSlot();}},80);}
+function finishSlot(){var a=document.getElementById('r1').innerText;var b=document.getElementById('r2').innerText;var c=document.getElementById('r3').innerText;var win='';if(a==='🍕'&&b==='🍕'&&c==='🍕'){win='JACKPOT - Free Pizza';}else if(a==='🍔'&&b==='🍔'&&c==='🍔'){win='15% OFF';}else if(a==='🍟'&&b==='🍟'&&c==='🍟'){win='Free Fries';}else if(a===b||b===c||a===c){win='5% OFF';}else{win='3% OFF';}var code=Math.floor(1000+Math.random()*9000);window._slotWin=win;window._slotCode=code;try{var codes=JSON.parse(localStorage.getItem('insha_codes')||'[]');codes.push({code:code,win:win,date:new Date().toLocaleString(),used:false,name:'',phone:'',deal:'Slot Machine',total:'',location:''});localStorage.setItem('insha_codes',JSON.stringify(codes));localStorage.setItem('insha_last_slot',Date.now().toString());}catch(e){}document.getElementById('slotResult').innerText='Mubarak ho! Aap ko '+win+' mila!';document.getElementById('slotCodeBox').style.display='block';document.getElementById('slotCodeText').innerText=code;document.getElementById('slotClaim').style.display='block';document.getElementById('spinBtn').innerText='HO GAYA - KAL PHIR AAYEN';flowerRain();updateBill();}
 </script>
-
-<footer><a href="#adminPanel">Insha Pizza Shop - 0342-7529146 | 0335-4277240 | Ichhra, Lahore</a></footer>
+<footer><a href="#adminPanel">Insha Fast Food - 0342-7529146 | 0335-4277240 | Ichhra, Lahore</a></footer>
 <a href="https://wa.me/923427529146" class="whats">Chat</a>
 <div id="adminPanel"><div style="background:#1a1a1a;border:2px solid #FFD700;border-radius:14px;padding:18px;max-width:680px;margin:10px auto">
-<h2 style="color:#FFD700;text-align:center">Admin Panel</h2>
+<h2 style="color:#FFD700;text-align:center">Admin Panel - Insha Fast Food</h2>
 <div id="loginBox"><input type="password" id="adminPass" placeholder="Password" style="width:100%;padding:12px;background:#000;color:#fff;border:1px solid #444;border-radius:10px;box-sizing:border-box">
 <button onclick="var v=document.getElementById('adminPass').value; v=v.replace(/ /g,''); if(v==='1218'){document.getElementById('loginBox').style.display='none';document.getElementById('dataBox').style.display='block'; try{var codes=JSON.parse(localStorage.getItem('insha_codes')||'[]'); document.getElementById('totalCount').innerText='Total Codes (Slot): '+codes.length; var h=''; for(var i=codes.length-1;i>=0;i--){var r=codes[i]; h+='<div style=\'border-bottom:1px solid #333;padding:8px\'>Code: <b style=\'color:#FFD700\'>'+r.code+'</b> | Win: '+r.win+' | '+(r.deal||'Slot Machine')+' | '+(r.used?'USED':'Fresh')+'<br>'+(r.name?('Name: '+r.name+' | Phone: '+r.phone+'<br>'):'Abhi Claim nahi kiya<br>')+'<span style=\'color:#888\'>'+r.date+'</span></div>';} if(codes.length==0){h='<div style=\'padding:10px;color:#aaa\'>Abhi kisi ne spin nahi kiya.</div>';} document.getElementById('dataList').innerHTML=h;}catch(e){document.getElementById('dataList').innerHTML='Data load nahi hua';}}else{alert('Wrong Password!');}" style="width:100%;margin-top:8px;padding:12px;background:#FFD700;border:none;border-radius:30px;font-weight:900">Login</button>
 <a href="#" style="display:block;text-align:center;margin-top:8px;padding:10px;background:#333;color:#fff;border-radius:30px;text-decoration:none">Close</a></div>
@@ -146,4 +114,5 @@ updateBill();
 <div id="verifyResult" style="margin-top:10px;font-size:13px"></div>
 </div>
 <div style="background:#000;border:2px solid #FF4444;border-radius:12px;padding:12px;margin:12px 0">
-<h3 style="color:#FF4444;font-size:14px;margin:0 0 8px
+<h3 style="color:#FF4444;font-size:14px;margin:0 0 8px 0">Slot Reset - Admin Only</h3>
+<button onclick="if(confirm('Slot reset kar
